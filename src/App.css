@@ -1,0 +1,5 @@
+html, body {
+  height: 100%;
+  overscroll-behavior-y: contain; /* lets the pull event work */
+  -webkit-overflow-scrolling: touch; /* important for iOS */
+}
