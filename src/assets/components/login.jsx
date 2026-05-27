@@ -11,7 +11,7 @@ export default function Login() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showSignup, setShowSignup] = useState(false);
 
-  const BASE_URL = "https://inde-hpbc.onrender.com";
+  // const BASE_URL = "https://inde-hpbc.onrender.com";
 
   // 🔁 AUTO LOGIN
   useEffect(() => {

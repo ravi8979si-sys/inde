@@ -89,21 +89,21 @@ const AccountActivation = ({ onClose }) => {
   <img
     src={qr}
     alt="UPI QR Code"
-    className="w-52 h-52 object-contain opacity-60"
+    className="w-52 h-52 object-contain "
   />
 
   {/* Cross Overlay */}
-  <div className="absolute inset-0 flex items-center justify-center">
+  {/* <div className="absolute inset-0 flex items-center justify-center">
     <div className="absolute w-full h-1 bg-red-600 rotate-45"></div>
     <div className="absolute w-full h-1 bg-red-600 -rotate-45"></div>
-  </div>
+  </div> */}
 
 </div>
 
 {/* QR Notice Line */}
-<p className="text-xs text-red-600 font-medium mb-4">
+{/* <p className="text-xs text-red-600 font-medium mb-4">
   Ask your agent for security deposit. Working QR code giving soon.
-</p>
+</p> */}
 
         {/* Bank Details */}
         {/* <div className="bg-white rounded-xl p-4 shadow-md text-left text-sm mb-4 border border-blue-200">

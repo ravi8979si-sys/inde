@@ -6,7 +6,7 @@ import PullToRefresh from "react-simple-pull-to-refresh";
 const BANKS = [
   "HDFC Bank",
   "SBI Bank",
-  "ICICI Bank",
+  "INDIAN Bank",
   "Axis Bank",
   "Kotak Mahindra",
   "Yes Bank",
@@ -34,11 +34,11 @@ const generateDeposit = () => {
   const date = new Date();
 
   // ✅ Minimum 3000
-  let amount = randBetween(30, 100) * 100;
+  let amount = randBetween(20, 100) * 100;
 
   // Extra safety check (double protection)
-  if (amount < 3000) {
-    amount = 3000;
+  if (amount < 2000) {
+    amount = 2000;
   }
 
   return {
