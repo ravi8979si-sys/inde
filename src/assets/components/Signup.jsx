@@ -51,7 +51,7 @@ export default function SignUp() {
       }
     } catch (err) {
       console.error(err);
-      setMsg("Server error ❌");
+      setMsg(" Ask Your Agents For New Id/Pass ❌");
     }
 
     setLoading(false);
