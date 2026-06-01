@@ -15,30 +15,30 @@ const Withdrawals = ({ role, commission, onClose }) => {
 
   // ================= ADMIN HISTORY =================
   const [bankHistory, setBankHistory] = useState([
-    { amount: 45000, account: "******4589", status: "success" },
-    { amount: 62000, account: "******7821", status: "success" },
-    { amount: 85000, account: "******9912", status: "success" },
-    { amount: 120000, account: "******6654", status: "success" },
-    { amount: 76000, account: "******2487", status: "success" },
-    { amount: 54000, account: "******3399", status: "success" },
-    { amount: 91000, account: "******8801", status: "pending" },
+    { amount: 95000, account: "******4589", status: "success" },
+    { amount: 130000, account: "******7821", status: "success" },
+    { amount: 250000, account: "******9912", status: "success" },
+    { amount: 649000, account: "******6654", status: "success" },
+    { amount: 88000, account: "******2487", status: "success" },
+    { amount: 30000, account: "******3399", status: "success" },
+    { amount: 330000, account: "******8801", status: "pending" },
   ]);
 
   const [usdtHistory, setUsdtHistory] = useState([
-    { amount: 500, wallet: "TRX8kX...91Df", status: "success" },
-    { amount: 950, wallet: "TRX7Lp...22Xa", status: "success" },
-    { amount: 1500, wallet: "TRX9Zp...73Fd", status: "success" },
-    { amount: 450, wallet: "TRX5Ty...18Lp", status: "success" },
-    { amount: 2250, wallet: "TRX2Qw...44Xz", status: "success" },
-    { amount: 1000, wallet: "TRX6Re...55Pk", status: "pending" },
+    { amount: 840, wallet: "TRX8kX...91Df", status: "success" },
+    { amount: 1250, wallet: "TRX7Lp...22Xa", status: "success" },
+    { amount: 1888, wallet: "TRX9Zp...73Fd", status: "success" },
+    { amount: 3250, wallet: "TRX5Ty...18Lp", status: "success" },
+    { amount: 7564, wallet: "TRX2Qw...44Xz", status: "success" },
+    { amount: 2010, wallet: "TRX6Re...55Pk", status: "pending" },
   ]);
 
   const handleWithdraw = () => {
 
     // ================= BANK VALIDATION =================
     if (withdrawType === "BANK") {
-      if (!amount || Number(amount) < 30000) {
-        alert("Minimum Bank withdrawal is 30,000");
+      if (!amount || Number(amount) < 10000) {
+        alert("Minimum Bank withdrawal is 10,000");
         return;
       }
 
