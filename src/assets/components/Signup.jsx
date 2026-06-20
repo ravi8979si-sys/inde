@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Login from "./login.jsx";
 
-const BASE_URL = "https://inde-hpbc.onrender.com";
+const BASE_URL = " https://inde-hpbc.onrender.com ";
 
 export default function SignUp() {
   const [name, setName] = useState("");
@@ -103,13 +103,13 @@ export default function SignUp() {
             className="h-11 w-full rounded-xl border border-slate-200 px-4 shadow-sm focus:ring-2 focus:ring-indigo-500"
           />
 
-          <button
-            type="submit"
-            disabled={loading}
-            className="h-11 w-full rounded-xl bg-gradient-to-r from-[#6a11cb] to-[#2575fc] text-white font-semibold shadow-lg disabled:opacity-60"
-          >
-            {loading ? "Creating..." : "Sign Up"}
-          </button>
+        <button
+  type="submit"
+  disabled={loading}
+  className="h-11 w-full rounded-xl bg-gradient-to-r from-[#6a11cb] to-[#2575fc] text-white font-semibold shadow-lg disabled:opacity-60"
+>
+  {loading ? "Creating account..." : "Sign Up"}
+</button>
         </form>
 
         {msg && (

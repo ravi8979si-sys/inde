@@ -12,6 +12,8 @@ const BANKS = [
   "Yes Bank",
   "Punjab National Bank",
   "Bank of Baroda",
+  "Jio Payments Bank" ,
+  "Bandhan Bank" ,
 ];
 
 const randomFrom = (arr) =>

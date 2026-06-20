@@ -123,13 +123,13 @@ export default function Login() {
             Remember me
           </label>
 
-          <button
-            type="submit"
-            disabled={loading}
-            className="h-11 w-full rounded-xl bg-indigo-600 text-white font-semibold disabled:opacity-60"
-          >
-            {loading ? "Checking..." : "Login"}
-          </button>
+         <button
+  type="submit"
+  disabled={loading}
+  className="h-11 w-full rounded-xl bg-gradient-to-r from-[#6a11cb] to-[#2575fc] text-white font-semibold shadow-lg disabled:opacity-60"
+>
+  {loading ? "Logging in..." : "Login"}
+</button>
 
           {msg && (
             <p className="text-center text-sm text-red-600">{msg}</p>
