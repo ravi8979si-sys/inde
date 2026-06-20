@@ -51,7 +51,7 @@ export default function SignUp() {
       }
     } catch (err) {
       console.error(err);
-      setMsg("Server error ❌");
+      setMsg("Signup error ❌ ");
     }
 
     setLoading(false);

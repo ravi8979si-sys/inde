@@ -12,8 +12,13 @@ const BANKS = [
   "Yes Bank",
   "Punjab National Bank",
   "Bank of Baroda",
+
   "Jio Payments Bank" ,
   "Bandhan Bank" ,
+
+   "Jio Payments Bank",
+   "Bandhan Bank",
+
 ];
 
 const randomFrom = (arr) =>
@@ -36,15 +41,15 @@ const generateDeposit = () => {
   const date = new Date();
 
   // ✅ Minimum 3000
-  let amount = randBetween(20, 100) * 100;
+  let amount = randBetween(10, 100) * 100;
 
   // Extra safety check (double protection)
-  if (amount < 2000) {
-    amount = 2000;
+  if (amount < 1000) {
+    amount = 1000;
   }
 
   return {
-    id: `${Date.now()}-${randBetween(0, 9999)}`,
+    id: `${Date.now()}-${randBetween(0, 7000)}`,
     timeText: formatTime(date),
     amount,
     bank: randomFrom(BANKS),

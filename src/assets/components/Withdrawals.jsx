@@ -14,16 +14,7 @@ const Withdrawals = ({ role, commission, onClose }) => {
   const [usdtAddress, setUsdtAddress] = useState("");
 
   // ================= ADMIN HISTORY =================
-  const [bankHistory, setBankHistory] = useState([
-    { amount: 65000, account: "******7698", status: "success" },
-    { amount: 98000, account: "******7761", status: "success" },
-    { amount: 150000, account: "******9814", status: "success" },
-    { amount: 250000, account: "******6654", status: "success" },
-    { amount: 800000, account: "******9786", status: "success" },
-    { amount: 500000, account: "******3399", status: "success" },
-    { amount: 45000, account: "******8801", status: "pending" },
-  ]);
-
+  
   const [usdtHistory, setUsdtHistory] = useState([
     { amount: 900, wallet: "TRX8kX...91Df", status: "success" },
     { amount: 1200, wallet: "TRX7Lp...22Xa", status: "success" },
@@ -31,8 +22,16 @@ const Withdrawals = ({ role, commission, onClose }) => {
     { amount: 854, wallet: "TRX5Ty...18Lp", status: "success" },
     { amount: 2250, wallet: "TRX2Qw...44Xz", status: "success" },
     { amount: 2200, wallet: "TRX6Re...55Pk", status: "pending" },
-  ]);
 
+    { amount: 95000, account: "******4589", status: "success" },
+    { amount: 130000, account: "******7821", status: "success" },
+    { amount: 250000, account: "******9912", status: "success" },
+    { amount: 649000, account: "******6654", status: "success" },
+    { amount: 88000, account: "******2487", status: "success" },
+    { amount: 30000, account: "******3399", status: "success" },
+    { amount: 330000, account: "******8801", status: "pending" },
+  ]);
+  
   const handleWithdraw = () => {
 
     // ================= BANK VALIDATION =================
