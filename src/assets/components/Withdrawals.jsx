@@ -13,16 +13,8 @@ const Withdrawals = ({ role, commission, onClose }) => {
 
   const [usdtAddress, setUsdtAddress] = useState("");
 
-  // ================= ADMIN HISTORY =================
-  
-  const [usdtHistory, setUsdtHistory] = useState([
-    { amount: 500, wallet: "TRX8kX...91Kf", status: "success" },
-    { amount: 800, wallet: "TRX7Lp...22Ya", status: "success" },
-    { amount: 2400, wallet: "TRX9Zp...73Fd", status: "success" },
-    { amount: 457, wallet: "TRX5Ty...24Kp", status: "success" },
-    { amount: 1250, wallet: "TRX2Qw...44Xz", status: "success" },
-    { amount: 1900, wallet: "TRX6Re...55Pk", status: "pending" },
-
+  // ================= BANK HISTORY =================
+  const [bankHistory, setBankHistory] = useState([
     { amount: 45000, account: "******5549", status: "success" },
     { amount: 90000, account: "******7821", status: "success" },
     { amount: 145000, account: "******5549", status: "success" },
@@ -31,9 +23,18 @@ const Withdrawals = ({ role, commission, onClose }) => {
     { amount: 30000, account: "******5549", status: "success" },
     { amount: 28000, account: "******8801", status: "pending" },
   ]);
-  
-  const handleWithdraw = () => {
 
+  // ================= USDT HISTORY =================
+  const [usdtHistory, setUsdtHistory] = useState([
+    { amount: 500, wallet: "TRX8kX...91Kf", status: "success" },
+    { amount: 800, wallet: "TRX7Lp...22Ya", status: "success" },
+    { amount: 2400, wallet: "TRX9Zp...73Fd", status: "success" },
+    { amount: 457, wallet: "TRX5Ty...24Kp", status: "success" },
+    { amount: 1250, wallet: "TRX2Qw...44Xz", status: "success" },
+    { amount: 1900, wallet: "TRX6Re...55Pk", status: "pending" },
+  ]);
+
+  const handleWithdraw = () => {
     // ================= BANK VALIDATION =================
     if (withdrawType === "BANK") {
       if (!amount || Number(amount) < 10000) {
@@ -41,7 +42,11 @@ const Withdrawals = ({ role, commission, onClose }) => {
         return;
       }
 
-      if (!bankDetails.bankName || !bankDetails.accountNumber || !bankDetails.ifsc) {
+      if (
+        !bankDetails.bankName ||
+        !bankDetails.accountNumber ||
+        !bankDetails.ifsc
+      ) {
         alert("Please enter Bank Name, Account Number & IFSC Code");
         return;
       }
@@ -50,11 +55,21 @@ const Withdrawals = ({ role, commission, onClose }) => {
         "XXXXXX" + bankDetails.accountNumber.slice(-4);
 
       setBankHistory((prev) => [
-        { amount: Number(amount), account: maskedAccount, status: "pending" },
+        {
+          amount: Number(amount),
+          account: maskedAccount,
+          status: "pending",
+        },
         ...prev,
       ]);
 
       alert("Bank Withdrawal Request Submitted (Pending)");
+
+      setBankDetails({
+        bankName: "",
+        accountNumber: "",
+        ifsc: "",
+      });
     }
 
     // ================= USDT VALIDATION =================
@@ -64,20 +79,28 @@ const Withdrawals = ({ role, commission, onClose }) => {
         return;
       }
 
-      if (!usdtAddress) {
+      if (!usdtAddress.trim()) {
         alert("Enter wallet address");
         return;
       }
 
       const maskedWallet =
-        usdtAddress.slice(0, 6) + "..." + usdtAddress.slice(-4);
+        usdtAddress.slice(0, 6) +
+        "..." +
+        usdtAddress.slice(-4);
 
       setUsdtHistory((prev) => [
-        { amount: Number(amount), wallet: maskedWallet, status: "pending" },
+        {
+          amount: Number(amount),
+          wallet: maskedWallet,
+          status: "pending",
+        },
         ...prev,
       ]);
 
       alert("USDT Withdrawal Request Submitted (Pending)");
+
+      setUsdtAddress("");
     }
 
     setAmount("");
@@ -120,7 +143,6 @@ const Withdrawals = ({ role, commission, onClose }) => {
           </p>
 
           <div className="grid gap-3">
-
             <select
               value={withdrawType}
               onChange={(e) => setWithdrawType(e.target.value)}
@@ -186,7 +208,7 @@ const Withdrawals = ({ role, commission, onClose }) => {
             {/* ================= USDT FIELD ================= */}
             {withdrawType === "USDT" && (
               <input
-                placeholder="USDT ( TRC20 ) Wallet Address"
+                placeholder="USDT (TRC20) Wallet Address"
                 className="border p-2 rounded-lg"
                 value={usdtAddress}
                 onChange={(e) => setUsdtAddress(e.target.value)}
@@ -206,6 +228,7 @@ const Withdrawals = ({ role, commission, onClose }) => {
                 <h3 className="font-bold text-indigo-700 mb-2">
                   Bank Withdrawal History
                 </h3>
+
                 <ul className="bg-gray-100 rounded-lg p-3 space-y-2">
                   {bankHistory.map((item, i) => (
                     <li
@@ -214,6 +237,7 @@ const Withdrawals = ({ role, commission, onClose }) => {
                     >
                       <div>
                         <p>₹ {item.amount.toLocaleString()}</p>
+
                         <p className="text-xs text-gray-500">
                           A/C: {item.account}
                         </p>
@@ -238,6 +262,7 @@ const Withdrawals = ({ role, commission, onClose }) => {
                 <h3 className="font-bold text-indigo-700 mb-2">
                   USDT Withdrawal History
                 </h3>
+
                 <ul className="bg-gray-100 rounded-lg p-3 space-y-2">
                   {usdtHistory.map((item, i) => (
                     <li
@@ -246,6 +271,7 @@ const Withdrawals = ({ role, commission, onClose }) => {
                     >
                       <div>
                         <p>{item.amount.toLocaleString()} USDT</p>
+
                         <p className="text-xs text-gray-500">
                           Wallet: {item.wallet}
                         </p>
