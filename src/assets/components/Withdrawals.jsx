@@ -16,20 +16,20 @@ const Withdrawals = ({ role, commission, onClose }) => {
   // ================= ADMIN HISTORY =================
   
   const [usdtHistory, setUsdtHistory] = useState([
-    { amount: 900, wallet: "TRX8kX...91Df", status: "success" },
-    { amount: 1200, wallet: "TRX7Lp...22Xa", status: "success" },
-    { amount: 6500, wallet: "TRX9Zp...73Fd", status: "success" },
-    { amount: 854, wallet: "TRX5Ty...18Lp", status: "success" },
-    { amount: 2250, wallet: "TRX2Qw...44Xz", status: "success" },
-    { amount: 2200, wallet: "TRX6Re...55Pk", status: "pending" },
+    { amount: 500, wallet: "TRX8kX...91Kf", status: "success" },
+    { amount: 800, wallet: "TRX7Lp...22Ya", status: "success" },
+    { amount: 2400, wallet: "TRX9Zp...73Fd", status: "success" },
+    { amount: 457, wallet: "TRX5Ty...24Kp", status: "success" },
+    { amount: 1250, wallet: "TRX2Qw...44Xz", status: "success" },
+    { amount: 1900, wallet: "TRX6Re...55Pk", status: "pending" },
 
-    { amount: 95000, account: "******4589", status: "success" },
-    { amount: 130000, account: "******7821", status: "success" },
-    { amount: 250000, account: "******9912", status: "success" },
-    { amount: 649000, account: "******6654", status: "success" },
-    { amount: 88000, account: "******2487", status: "success" },
-    { amount: 30000, account: "******3399", status: "success" },
-    { amount: 330000, account: "******8801", status: "pending" },
+    { amount: 45000, account: "******5549", status: "success" },
+    { amount: 90000, account: "******7821", status: "success" },
+    { amount: 145000, account: "******5549", status: "success" },
+    { amount: 29000, account: "******6654", status: "success" },
+    { amount: 67000, account: "******2487", status: "success" },
+    { amount: 30000, account: "******5549", status: "success" },
+    { amount: 28000, account: "******8801", status: "pending" },
   ]);
   
   const handleWithdraw = () => {
