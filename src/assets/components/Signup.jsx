@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Login from "./login.jsx";
 
-const BASE_URL = " https://inde-hpbc.onrender.com ";
+const BASE_URL = "https://inde-hpbc.onrender.com";
 
 export default function SignUp() {
   const [name, setName] = useState("");
